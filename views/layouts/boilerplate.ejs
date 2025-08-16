@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+  <meta charset="UTF-8"> <!-- Sets the character encoding for the document -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsive design on different devices -->
+  <title>WanderLust</title> <!-- Sets the title of the web page that appears on browser tab -->
+
+  <link rel="stylesheet" href="/css/style.css"> <!-- Links to a local CSS file for custom styles -->
+  
+  <!-- Includes Bootstrap CSS from CDN for responsive and modern UI components -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" 
+        crossorigin="anonymous">
+
+  <!-- Includes Font Awesome for scalable vector icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" 
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Preconnects to Google's font server to improve loading speed -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Loads the Plus Jakarta Sans font from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" 
+        rel="stylesheet">
+</head>
+
+<body>
+  <!-- Includes the navigation bar from a shared EJS template -->
+ <%- include("../includes/navbar") %>
+
+  <!-- Main content container where dynamic EJS content gets injected -->
+  <div class="container"><%- body %></div>
+
+  <!-- Includes the footer from a shared EJS template -->
+  <%- include("../includes/footer") %>
+
+  <!-- Includes Bootstrap JavaScript bundle for interactivity and components like modals, dropdowns, etc. -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" 
+          integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" 
+          crossorigin="anonymous"></script>
+
+   <script src="/js/script.js"></script>       
+</body>
+</html>
