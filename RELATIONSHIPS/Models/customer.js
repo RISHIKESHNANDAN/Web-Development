@@ -34,14 +34,27 @@ let result = await Customer.find({}).populate('orders');
 console.log(result[0]);
  };
 
-findCustomer();
-// const addOrders = async () => {
-//   let res = await Order.insertMany([
-//     {item: 'samosa', price: 12},
-//     {item: 'Chips', price: 10},
-//     {item: 'Chocolate', price: 40}
-// ]);
-//   console.log(res);
-// }
+const addCust = async () => {
+  let newCust = new Customer({
+    name:"Karan Arjun"
+  });
 
-// addOrders();zz
+  let newOrder = new Order({
+    item:"Pizza",
+    price:258,
+  });
+  
+  newCust.orders.push(newOrder);
+  
+  await newOrder.save();
+  await newCust.save();
+
+  console.log("added new customer");
+};
+
+const delCust =async() =>{
+  let data = await Customer.findByIdAndDelete("689f6f87df30dcdbcc92f52c");
+  console.log(data);
+}
+
+delCust();
